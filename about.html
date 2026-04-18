@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Osteria N.3 — Discover our story, our passionate team and the values that drive every dish we serve in Praia, Cape Verde." />
+  <meta name="keywords" content="Osteria N.3 about, Cape Verde restaurant story, Italian restaurant team Praia" />
+  <meta name="author" content="Osteria N.3" />
+  <title>About Us | Osteria N.3 · Praia, Cape Verde</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>" />
+
+  <style>
+    /* ── About page extras ── */
+
+    /* ── Hero quote overlay ── */
+    .about-hero-quote {
+      font-family: var(--font-script);
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.8rem;
+      display: block;
+      font-style: normal;
+    }
+
+    /* ── Story Section ── */
+    .story-section {
+      padding: 7rem 8%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .story-img-wrap {
+      position: relative;
+    }
+
+    .story-img-main {
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      display: block;
+    }
+
+    .story-img-float {
+      position: absolute;
+      bottom: -2.5rem;
+      right: -2rem;
+      width: 52%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      border: 4px solid var(--green-dark);
+      box-shadow: var(--shadow-md);
+    }
+
+    .story-year-badge {
+      position: absolute;
+      top: 2.5rem;
+      right: -1.5rem;
+      background: var(--orange);
+      color: var(--white);
+      padding: 1.2rem 1.5rem;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      box-shadow: var(--shadow-orange);
+      z-index: 2;
+    }
+
+    .story-year-badge .year {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      display: block;
+      line-height: 1;
+    }
+
+    .story-year-badge .label {
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .story-content { padding-top: 1rem; }
+
+    .story-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .story-content p.lead {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      font-style: italic;
+      border-left: 3px solid var(--orange);
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Mission strip ── */
+    .mission-strip {
+      background: var(--green-deep);
+      border-top: 1px solid rgba(232,93,4,0.15);
+      border-bottom: 1px solid rgba(232,93,4,0.15);
+      padding: 5rem 8%;
+      display: grid;
+      grid-template-columns: 1fr 2px 1fr 2px 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .mission-divider {
+      height: 80px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 2px;
+    }
+
+    .mission-item {
+      text-align: center;
+    }
+
+    .mission-item .m-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .mission-item h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+
+    .mission-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
+    /* ── Timeline ── */
+    .timeline-section {
+      padding: 7rem 8%;
+      background: var(--green-dark);
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 4rem;
+      padding-left: 3rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        var(--orange) 0%,
+        rgba(232,93,4,0.3) 60%,
+        transparent 100%
+      );
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -3.45rem;
+      top: 0.2rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--orange);
+      border: 3px solid var(--green-dark);
+      box-shadow: 0 0 0 3px rgba(232,93,4,0.25);
+    }
+
+    .timeline-year {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-item h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-item p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* ── Team Section ── */
+    .team-section-page {
+      padding: 7rem 8%;
+      background: var(--green-deep);
+    }
+
+    .team-grid-page {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .team-card-page {
+      background: var(--green-mid);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .team-card-page:hover {
+      transform: translateY(-10px);
+      border-color: rgba(232,93,4,0.3);
+      box-shadow: var(--shadow-md);
+    }
+
+    .team-card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+    }
+
+    .team-card-page-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.6s ease;
+      filter: grayscale(15%);
+    }
+
+    .team-card-page:hover .team-card-page-img {
+      transform: scale(1.06);
+      filter: grayscale(0%);
+    }
+
+    .team-social-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(10,31,15,0.9) 0%, transparent 100%);
+      padding: 1.5rem 1rem 1rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: var(--transition);
+    }
+
+    .team-card-page:hover .team-social-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .team-social-btn {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(232,93,4,0.8);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+      color: white;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+
+    .team-social-btn:hover { background: var(--orange); }
+
+    .team-card-info-page {
+      padding: 1.5rem;
+    }
+
+    .team-card-info-page h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .team-card-info-page .role {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.8rem;
+    }
+
+    .team-card-info-page p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .team-card-info-page .speciality {
+      margin-top: 0.8rem;
+      font-size: 0.72rem;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ── Values Section ── */
+    .values-section-page {
+      padding: 7rem 8%;
+      background: var(--green-dark);
+    }
+
+    .values-grid-page {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .value-card-page {
+      background: var(--green-deep);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card-page::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--orange);
+      transition: height 0.4s ease;
+      border-radius: 0 0 2px 2px;
+    }
+
+    .value-card-page:hover::before { height: 100%; }
+
+    .value-card-page:hover {
+      transform: translateY(-6px);
+      border-color: rgba(232,93,4,0.2);
+      box-shadow: var(--shadow-md);
+    }
+
+    .value-icon-wrap {
+      width: 60px; height: 60px;
+      background: var(--orange-glow);
+      border: 1px solid rgba(232,93,4,0.3);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .value-card-page:hover .value-icon-wrap {
+      background: var(--orange);
+      border-color: var(--orange);
+      box-shadow: var(--shadow-orange);
+    }
+
+    .value-card-page h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    .value-card-page p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ── Awards / Recognition ── */
+    .awards-section {
+      padding: 6rem 8%;
+      background: var(--green-mid);
+      text-align: center;
+    }
+
+    .awards-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 4rem;
+    }
+
+    .award-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 2rem 2.5rem;
+      background: var(--green-deep);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      min-width: 180px;
+      transition: var(--transition);
+    }
+
+    .award-item:hover {
+      border-color: rgba(201,168,76,0.35);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .award-icon {
+      font-size: 2.5rem;
+    }
+
+    .award-item h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .award-item p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ── Promise Section ── */
+    .promise-section {
+      padding: 7rem 8%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      background: var(--green-deep);
+    }
+
+    .promise-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .promise-content .promise-list {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .promise-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .promise-list-item .check {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--orange-glow);
+      border: 1px solid rgba(232,93,4,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--orange);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .promise-list-item .text h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .promise-list-item .text p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .story-section,
+      .promise-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .story-img-float { display: none; }
+      .story-img-main { height: 380px; }
+      .story-year-badge { right: 1rem; }
+      .mission-strip {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+      .mission-divider { display: none; }
+      .timeline { padding-left: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      .story-section,
+      .timeline-section,
+      .team-section-page,
+      .values-section-page,
+      .awards-section,
+      .promise-section { padding: 4rem 5%; }
+      .mission-strip { padding: 4rem 5%; }
+      .team-grid-page { grid-template-columns: repeat(2, 1fr); }
+      .awards-grid { gap: 1.5rem; }
+      .award-item { min-width: 140px; padding: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .team-grid-page { grid-template-columns: 1fr; }
+      .values-grid-page { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== LOADER ========== -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">OSTERIA N.3</div>
+    <div style="font-size:0.65rem; letter-spacing:4px; color:var(--orange); text-transform:uppercase; margin-top:-0.5rem; margin-bottom:1rem;">Our Story</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">OSTERIA N.3</span>
+      <span class="logo-sub">Praia · Cape Verde</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="reservation.html">Reservations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservation.html" class="nav-cta">Book a Table</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="reservation.html">Reservations</a>
+    <a href="contact.html">Contact</a>
+    <a href="reservation.html" class="btn-primary" style="margin-top:1rem;">Book a Table</a>
+  </div>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero" style="height:60vh; min-height:420px;">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1920&q=80');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="section-tag" style="display:flex; justify-content:center; padding-left:0;">Our Story</span>
+      <h1>Passion on Every <em style="color:var(--orange); font-style:italic;">Plate</em></h1>
+      <span class="about-hero-quote">"Food is our love language — and we speak it fluently"</span>
+      <div class="breadcrumb" style="margin-top:0.8rem;">
+        <a href="index.html">Home</a>
+        <span>&#8250;</span>
+        <span>About Us</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STORY SECTION ========== -->
+  <section class="story-section">
+
+    <div class="story-img-wrap reveal-left">
+      <img
+        class="story-img-main"
+        src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=80"
+        alt="Osteria N.3 interior dining room"
+      />
+      <img
+        class="story-img-float"
+        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"
+        alt="Osteria N.3 signature dish"
+      />
+      <div class="story-year-badge">
+        <span class="year">2015</span>
+        <span class="label">Est. Year</span>
+      </div>
+    </div>
+
+    <div class="story-content reveal-right">
+      <span class="section-tag">Who We Are</span>
+      <h2 class="section-title">
+        Born from a Love of <em>Great Food</em>
+      </h2>
+      <div class="divider"></div>
+
+      <p class="lead">
+        "We didn't just open a restaurant — we opened a home for flavour, warmth and
+        unforgettable memories in the heart of Praia."
+      </p>
+
+      <p>
+        Osteria N.3 was born in 2015 with a single, uncompromising vision: to bring
+        the soul of authentic cuisine to the shores of Cape Verde. What started as a
+        small, intimate eatery has grown into one of Praia's most beloved and
+        recognised dining destinations — but our roots have never changed.
+      </p>
+
+      <p>
+        Every dish we serve is a tribute to the tradition, the craft and the passion
+        of our kitchen team. We source our ingredients with obsessive care — locally
+        where possible, always fresh, always chosen for flavour above all else.
+        From hand-rolled pastas to line-caught Atlantic seafood, each plate tells a story.
+      </p>
+
+      <p>
+        Our dining room is designed to feel like an extension of someone's home —
+        warm, welcoming and alive with conversation. We believe the finest dining
+        experiences aren't just about the food; they're about the laughter shared,
+        the memories made and the feeling you carry with you long after you leave.
+      </p>
+
+      <div style="display:flex; gap:1.5rem; margin-top:2.5rem; flex-wrap:wrap;">
+        <a href="menu.html" class="btn-primary">Explore Our Menu</a>
+        <a href="reservation.html" class="btn-outline">Book a Table</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== MISSION STRIP ========== -->
+  <div class="mission-strip stagger">
+    <div class="mission-item">
+      <span class="m-icon">&#127807;</span>
+      <h3>Our Mission</h3>
+      <p>To serve food that nourishes the soul, crafted with honesty, care and the very best ingredients Cape Verde and beyond have to offer.</p>
+    </div>
+    <div class="mission-divider"></div>
+    <div class="mission-item">
+      <span class="m-icon">&#128065;</span>
+      <h3>Our Vision</h3>
+      <p>To be the restaurant that Cape Verde is proud of — a place where locals and visitors alike feel at home and always leave smiling.</p>
+    </div>
+    <div class="mission-divider"></div>
+    <div class="mission-item">
+      <span class="m-icon">&#10084;</span>
+      <h3>Our Promise</h3>
+      <p>Every guest who walks through our doors will be treated like family. Every dish served will be made with the same love we'd cook for our own.</p>
+    </div>
+  </div>
+
+  <!-- ========== TIMELINE ========== -->
+  <section class="timeline-section">
+    <div style="text-align:center; margin-bottom:0;">
+      <span class="section-tag" style="display:inline-flex; padding-left:2.5rem;">Our Journey</span>
+      <h2 class="section-title reveal" style="text-align:center;">
+        A Decade of <em>Excellence</em>
+      </h2>
+      <div class="divider center"></div>
+      <p class="section-subtitle" style="text-align:center; margin:0 auto;">
+        From a small dining room in Praia to a celebrated Cape Verde institution — here's how we got here.
+      </p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2015 — The Beginning</div>
+        <h3>Osteria N.3 Opens Its Doors</h3>
+        <p>
+          With 12 tables, a small but dedicated kitche
