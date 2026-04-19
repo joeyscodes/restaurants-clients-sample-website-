@@ -1,0 +1,24 @@
+/* Fixes the broken background word in the other file */
+.reservation-teaser-img::after {
+    background: transparent;
+}
+
+/* Adjusts the site for any screen smaller than a laptop */
+@media (max-width: 991px) {
+    .navbar-list {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 10px;
+    }
+    .hero-title {
+        font-size: 3rem !important;
+        text-align: center;
+    }
+    .reservation-teaser {
+        grid-template-columns: 1fr !important;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
