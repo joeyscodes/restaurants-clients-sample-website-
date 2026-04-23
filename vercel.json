@@ -1,0 +1,24 @@
+VERCEL_JSON='{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src * '"'"'unsafe-inline'"'"' '"'"'unsafe-eval'"'"' data: blob:; img-src * data: blob:; style-src * '"'"'unsafe-inline'"'"'; font-src * data:; script-src * '"'"'unsafe-inline'"'"' '"'"'unsafe-eval'"'"';"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ]
+    }
+  ]
+}'
+
+echo "$VERCEL_JSON" > /mnt/user-data/outputs/osteria-n3/vercel.json
+echo "$VERCEL_JSON" > /mnt/user-data/outputs/elicibar/vercel.json
+echo "$VERCEL_JSON" > /mnt/user-data/outputs/cham/vercel.json
+
+echo "vercel.json created for all 3 sites"
+cat /mnt/user-data/outputs/cham/vercel.json
