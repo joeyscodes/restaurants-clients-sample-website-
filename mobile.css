@@ -1,22 +1,30 @@
-/* Fixes the broken background word in the other file */
-.reservation-teaser-img::after {
-    background: transparent;
-}
+/* Mobile & Responsive Fixes */
 
-/* Adjusts the site for any screen smaller than a laptop */
 @media (max-width: 991px) {
-    .navbar-list {
-        flex-direction: column !important;
-        align-items: center;
-        gap: 10px;
+    .navbar {
+        padding: 0 3%;
+        height: 70px;
     }
-    .hero-title {
-        font-size: 3rem !important;
-        text-align: center;
+    
+    .nav-links {
+        display: none;
     }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .about-section,
     .reservation-teaser {
         grid-template-columns: 1fr !important;
+        gap: 2rem;
     }
+    
+    .gallery-strip {
+        grid-template-columns: repeat(3, 1fr);
+        height: 250px;
+    }
+    
     img {
         max-width: 100%;
         height: auto;

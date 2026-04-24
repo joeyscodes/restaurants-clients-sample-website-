@@ -66,8 +66,38 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 ::selection { background: var(--orange); color: var(--white); }
 
 /* ============================================================
-   LOADER SUBTITLE
+   LOADER
    ============================================================ */
+.loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100vh;
+  background: var(--green-dark);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-logo {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+}
+
 .loader-subtitle {
   font-size: 0.65rem;
   letter-spacing: 4px;
@@ -75,6 +105,27 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   text-transform: uppercase;
   margin-top: -0.5rem;
   margin-bottom: 1rem;
+}
+
+.loader-bar {
+  width: 150px;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--orange), var(--orange-light));
+  width: 30%;
+  animation: loaderProgress 1.5s ease-in-out infinite;
+}
+
+@keyframes loaderProgress {
+  0% { width: 10%; }
+  50% { width: 70%; }
+  100% { width: 90%; }
 }
 
 /* ============================================================
@@ -93,6 +144,33 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.res-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.res-detail .icon {
+  font-size: 1.5rem;
+  color: var(--orange);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.res-detail h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+
+.res-detail p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
 /* ============================================================
@@ -351,6 +429,79 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 }
 
 /* ============================================================
+   ANIMATIONS - CRITICAL FOR VISIBILITY
+   ============================================================ */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scroll Reveal States */
+.reveal, .reveal-left, .reveal-right, .stagger > * {
+  opacity: 0;
+}
+
+.reveal.visible {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.reveal-left.visible {
+  animation: slideInLeft 0.6s ease forwards;
+}
+
+.reveal-right.visible {
+  animation: slideInRight 0.6s ease forwards;
+}
+
+.stagger > * {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.stagger > *:nth-child(1) { animation-delay: 0s; }
+.stagger > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger > *:nth-child(3) { animation-delay: 0.2s; }
+.stagger > *:nth-child(4) { animation-delay: 0.3s; }
+.stagger > *:nth-child(5) { animation-delay: 0.4s; }
+.stagger > *:nth-child(6) { animation-delay: 0.5s; }
+
+/* ============================================================
    SECTION COMMONS
    ============================================================ */
 .section-tag {
@@ -416,6 +567,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   display: flex;
   align-items: center;
   overflow: hidden;
+  margin-top: 80px;
 }
 
 .hero-bg {
@@ -427,35 +579,32 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   background-repeat: no-repeat;
   transform: scale(1.08);
   transition: transform 8s ease;
+  top: -80px;
 }
 
 /* Page hero backgrounds */
-.page-hero-bg.menu-bg {
-  background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1920&q=80');
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.page-hero-bg.menu-bg {
+  background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1920&q=80');
 }
 
 .page-hero-bg.reservation-bg {
   background-image: url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1920&q=80');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .page-hero-bg.about-bg {
   background-image: url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1920&q=80');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .page-hero-bg.contact-bg {
   background-image: url('https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=1920&q=80');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .hero-bg.loaded { transform: scale(1); }
@@ -1242,12 +1391,61 @@ footer {
 }
 
 /* ============================================================
+   FORM STYLES
+   ============================================================ */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  background: rgba(255,255,255,0.08);
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-success {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .navbar {
     padding: 0 3%;
-    height: 70px;
   }
 
   .nav-links {
@@ -1283,9 +1481,14 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .hero {
+    min-height: 600px;
+    margin-top: 70px;
+  }
+
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .section-title {
@@ -1311,5 +1514,61 @@ footer {
 
   .res-details {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 500px;
+    margin-top: 60px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-badge {
+    font-size: 0.6rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .gallery-strip {
+    grid-template-columns: 1fr;
+    height: 150px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-img-accent {
+    bottom: -30px;
+    width: 50%;
+    height: 200px;
+  }
+
+  .about-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    gap: 2rem;
+  }
+
+  .cta-banner {
+    padding: 3rem 5%;
+  }
+
+  .cta-banner h2 {
+    font-size: 1.6rem;
   }
 }
