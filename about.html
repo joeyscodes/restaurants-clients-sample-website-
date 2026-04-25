@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Osteria N.3 — Discover our story, our passionate team and the values that drive every dish we serve in Praia, Cape Verde." />
+  <meta name="keywords" content="Osteria N.3 about, Cape Verde restaurant story, Italian restaurant team Praia" />
+  <meta name="author" content="Osteria N.3" />
+  <title>About Us | Osteria N.3 · Praia, Cape Verde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Raleway:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+  
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>" />
+
+  <style>
+    /* ── About page extras ── */
+
+    /* ── Hero quote overlay ── */
+    .about-hero-quote {
+      font-family: var(--font-script);
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.8rem;
+      display: block;
+      font-style: normal;
+    }
+
+    /* ── Story Section ── */
+    .story-section {
+      padding: 7rem 8%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .story-img-wrap {
+      position: relative;
+    }
+
+    .story-img-main {
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      display: block;
+    }
+
+    .story-img-float {
+      position: absolute;
+      bottom: -2.5rem;
+      right: -2rem;
+      width: 52%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      border: 4px solid var(--green-dark);
+      box-shadow: var(--shadow-md);
+    }
+
+    .story-year-badge {
+      position: absolute;
+      top: 2.5rem;
+      right: -1.5rem;
+      background: var(--orange);
+      color: var(--white);
+      padding: 1.2rem 1.5rem;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      box-shadow: var(--shadow-orange);
+      z-index: 2;
+    }
+
+    .story-year-badge .year {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      display: block;
+      line-height: 1;
+    }
+
+    .story-year-badge .label {
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .story-content { padding-top: 1rem; }
+
+    .story-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .story-content p.lead {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      font-style: italic;
+      border-left: 3px solid var(--orange);
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Mission strip ── */
+    .mission-strip {
+      background: var(--green-deep);
+      border-top: 1px solid rgba(232,93,4,0.15);
+      border-bottom: 1px solid rgba(232,93,4,0.15);
+      padding: 5rem 8%;
+      display: grid;
+      grid-template-columns: 1fr 2px 1fr 2px 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .mission-divider {
+      height: 80px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 2px;
+    }
+
+    .mission-item {
+      text-align: center;
+    }
+
+    .mission-item .m-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .mission-item h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+
+    .mission-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
+    /* ── Timeline ── */
+    .timeline-section {
+      padding: 7rem 8%;
+      background: var(--green-dark);
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 4rem;
+      padding-left: 3rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        var(--orange) 0%,
+        rgba(232,93,4,0.3) 60%,
+        transparent 100%
+      );
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -3.45rem;
+      top: 0.2rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--orange);
+      border: 3px solid var(--green-dark);
+      box-shadow: 0 0 0 3px rgba(232,93,4,0.25);
+    }
+
+    .timeline-year {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-item h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-item p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* ── Team Section ── */
+    .team-section-page {
+      padding: 7rem 8%;
+      background: var(--green-deep);
+    }
+
+    .team-grid-page {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .team-card-page {
+      background: var(--green-mid);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .team-card-page:hover {
+      transform: translateY(-10px);
+      border-color: rgba(232,93,4,0.3);
+      box-shadow: var(--shadow-md);
+    }
+
+    .team-card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+    }
+
+    .team-card-page-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.6s ease;
+      filter: grayscale(15%);
+    }
+
+    .team-card-page:hover .team-card-page-img {
+      transform: scale(1.06);
+      filter: grayscale(0%);
+    }
+
+    .team-social-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(10,31,15,0.9) 0%, transparent 100%);
+      padding: 1.5rem 1rem 1rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: var(--transition);
+    }
+
+    .team-card-page:hover .team-social-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .team-social-btn {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(232,93,4,0.8);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+      color: white;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+
+    .team-social-btn:hover { background: var(--orange); }
+
+    .team-card-info-page {
+      padding: 1.5rem;
+    }
+
+    .team-card-info-page h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .team-card-info-page .role {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.8rem;
+    }
+
+    .team-card-info-page p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .team-card-info-page .speciality {
+      margin-top: 0.8rem;
+      font-size: 0.72rem;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ── Values Section ── */
+    .values-section-page {
+      padding: 7rem 8%;
+      background: var(--green-dark);
+    }
+
+    .values-grid-page {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .value-card-page {
+      background: var(--green-deep);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card-page::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--orange);
+      transition: height 0.4s ease;
+      border-radius: 0 0 2px 2px;
+    }
+
+    .value-card-page:hover::before { height: 100%; }
+
+    .value-card-page:hover {
+      transform: translateY(-6px);
+      border-color: rgba(232,93,4,0.2);
+      box-shadow: var(--shadow-md);
+    }
+
+    .value-icon-wrap {
+      width: 60px; height: 60px;
+      background: var(--orange-glow);
+      border: 1px solid rgba(232,93,4,0.3);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .value-card-page:hover .value-icon-wrap {
+      background: var(--orange);
+      border-color: var(--orange);
+      box-shadow: var(--shadow-orange);
+    }
+
+    .value-card-page h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    .value-card-page p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ── Awards / Recognition ── */
+    .awards-section {
+      padding: 6rem 8%;
+      background: var(--green-mid);
+      text-align: center;
+    }
+
+    .awards-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 4rem;
+    }
+
+    .award-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 2rem 2.5rem;
+      background: var(--green-deep);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      min-width: 180px;
+      transition: var(--transition);
+    }
+
+    .award-item:hover {
+      border-color: rgba(201,168,76,0.35);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .award-icon {
+      font-size: 2.5rem;
+    }
+
+    .award-item h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .award-item p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ── Promise Section ── */
+    .promise-section {
+      padding: 7rem 8%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      background: var(--green-deep);
+    }
+
+    .promise-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .promise-content .promise-list {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .promise-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .promise-list-item .check {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--orange-glow);
+      border: 1px solid rgba(232,93,4,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--orange);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .promise-list-item .text h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .promise-list-item .text p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .story-section,
+      .promise-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .story-img-float { display: none; }
+      .story-img-main { height: 380px; }
+      .story-year-badge { right: 1rem; }
+      .mission-strip {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+      }
+      .mission-divider { display: none; }
+      .timeline { padding-left: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      .story-section,
+      .timeline-section,
+      .team-section-page,
+      .values-section-page,
+      .awards-section,
+      .promise-section { padding: 4rem 5%; }
+      .mission-strip { padding: 4rem 5%; }
+      .team-grid-page { grid-template-columns: repeat(2, 1fr); }
+      .awards-grid { gap: 1.5rem; }
+      .award-item { min-width: 140px; padding: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .team-grid-page { grid-template-columns: 1fr; }
+      .values-grid-page { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== LOADER ========== -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">OSTERIA N.3</div>
+    <div style="font-size:0.65rem; letter-spacing:4px; color:var(--orange); text-transform:uppercase; margin-top:-0.5rem; margin-bottom:1rem;">Our Story</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">OSTERIA N.3</span>
+      <span class="logo-sub">Praia · Cape Verde</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="reservation.html">Reservations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservation.html" class="nav-cta">Book a Table</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="reservation.html">Reservations</a>
+    <a href="contact.html">Contact</a>
+    <a href="reservation.html" class="btn-primary" style="margin-top:1rem;">Book a Table</a>
+  </div>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero" style="height:60vh; min-height:420px;">
+    <div class="page-hero-bg about-bg"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <span class="section-tag" style="display:flex; justify-content:center; padding-left:0;">Our Story</span>
+      <h1>Passion on Every <em style="color:var(--orange); font-style:italic;">Plate</em></h1>
+      <span class="about-hero-quote">"Food is our love language — and we speak it fluently"</span>
+      <div class="breadcrumb" style="margin-top:0.8rem;">
+        <a href="index.html">Home</a>
+        <span>&#8250;</span>
+        <span>About Us</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STORY SECTION ========== -->
+  <section class="story-section">
+
+    <div class="story-img-wrap reveal-left">
+      <img
+        class="story-img-main"
+        src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700?w=900&q=80q=75"
+        alt="Osteria N.3 interior dining room"
+      />
+      <img
+        class="story-img-float"
+        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500?w=600&q=80q=72"
+        alt="Osteria N.3 signature dish"
+      />
+      <div class="story-year-badge">
+        <span class="year">2015</span>
+        <span class="label">Est. Year</span>
+      </div>
+    </div>
+
+    <div class="story-content reveal-right">
+      <span class="section-tag">Who We Are</span>
+      <h2 class="section-title">
+        Born from a Love of <em>Great Food</em>
+      </h2>
+      <div class="divider"></div>
+
+      <p class="lead">
+        "We didn't just open a restaurant — we opened a home for flavour, warmth and
+        unforgettable memories in the heart of Praia."
+      </p>
+
+      <p>
+        Osteria N.3 was born in 2015 with a single, uncompromising vision: to bring
+        the soul of authentic cuisine to the shores of Cape Verde. What started as a
+        small, intimate eatery has grown into one of Praia's most beloved and
+        recognised dining destinations — but our roots have never changed.
+      </p>
+
+      <p>
+        Every dish we serve is a tribute to the tradition, the craft and the passion
+        of our kitchen team. We source our ingredients with obsessive care — locally
+        where possible, always fresh, always chosen for flavour above all else.
+        From hand-rolled pastas to line-caught Atlantic seafood, each plate tells a story.
+      </p>
+
+      <p>
+        Our dining room is designed to feel like an extension of someone's home —
+        warm, welcoming and alive with conversation. We believe the finest dining
+        experiences aren't just about the food; they're about the laughter shared,
+        the memories made and the feeling you carry with you long after you leave.
+      </p>
+
+      <div style="display:flex; gap:1.5rem; margin-top:2.5rem; flex-wrap:wrap;">
+        <a href="menu.html" class="btn-primary">Explore Our Menu</a>
+        <a href="reservation.html" class="btn-outline">Book a Table</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== MISSION STRIP ========== -->
+  <div class="mission-strip stagger">
+    <div class="mission-item">
+      <span class="m-icon">&#127807;</span>
+      <h3>Our Mission</h3>
+      <p>To serve food that nourishes the soul, crafted with honesty, care and the very best ingredients Cape Verde and beyond have to offer.</p>
+    </div>
+    <div class="mission-divider"></div>
+    <div class="mission-item">
+      <span class="m-icon">&#128065;</span>
+      <h3>Our Vision</h3>
+      <p>To be the restaurant that Cape Verde is proud of — a place where locals and visitors alike feel at home and always leave smiling.</p>
+    </div>
+    <div class="mission-divider"></div>
+    <div class="mission-item">
+      <span class="m-icon">&#10084;</span>
+      <h3>Our Promise</h3>
+      <p>Every guest who walks through our doors will be treated like family. Every dish served will be made with the same love we'd cook for our own.</p>
+    </div>
+  </div>
+
+  <!-- ========== TIMELINE ========== -->
+  <section class="timeline-section">
+    <div style="text-align:center; margin-bottom:0;">
+      <span class="section-tag" style="display:inline-flex; padding-left:2.5rem;">Our Journey</span>
+      <h2 class="section-title reveal" style="text-align:center;">
+        A Decade of <em>Excellence</em>
+      </h2>
+      <div class="divider center"></div>
+      <p class="section-subtitle" style="text-align:center; margin:0 auto;">
+        From a small dining room in Praia to a celebrated Cape Verde institution — here's how we got here.
+      </p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2015 — The Beginning</div>
+        <h3>Osteria N.3 Opens Its Doors</h3>
+        <p>
+          With 12 tables, a small but dedicated kitchen team and an obsession with
+          authentic flavour, Osteria N.3 opened in Praia, Cape Verde. Within weeks,
+          every seat was taken every evening.
+        </p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2017 — Growing Recognition</div>
+        <h3>Named Best New Restaurant in Cape Verde</h3>
+        <p>
+          Just two years in, we were honoured with our first major recognition — 
+          a nod that validated everything our team had worked tirelessly to build.
+          The queue outside told us what the award confirmed.
+        </p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2019 — Expansion</div>
+        <h3>Private Dining Room &amp; Extended Kitchen</h3>
+        <p>
+          Responding to growing demand for events and private celebrations, we
+          expanded our space — adding a dedicated private dining room for up to
+          30 guests and a larger kitchen to match our growing ambitions.
+        </p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2021 — Innovation</div>
+        <h3>Seasonal Tasting Menu Launched</h3>
+        <p>
+          Our head chef introduced a rotating seasonal tasting menu — a curated
+          six-course journey celebrating local ingredients at their peak. It
+          immediately became one of our most requested dining experiences.
+        </p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2023 — Community</div>
+        <h3>Cape Verde Culinary Partnership</h3>
+        <p>
+          We formalised our commitment to the local community by partnering with
+          Cape Verde fishermen, farmers and producers — ensuring our menu directly
+          supports those who make our cuisine possible.
+        </p>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" style="background:var(--gold); box-shadow: 0 0 0 4px rgba(201,168,76,0.25);"></div>
+        <div class="timeline-year" style="color:var(--gold);">2025 — Today</div>
+        <h3>A Decade &amp; Still Growing</h3>
+        <p>
+          Ten years on, Osteria N.3 remains as passionate and driven as ever.
+          With over 5,000 happy guests, a team of 18 dedicated professionals and
+          an ever-evolving menu, the best is still yet to come.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== TEAM SECTION ========== -->
+  <section class="team-section-page">
+    <div style="text-align:center;">
+      <span class="section-tag" style="display:inline-flex; padding-left:2.5rem;">The People Behind the Plate</span>
+      <h2 class="section-title reveal" style="text-align:center;">
+        Meet Our <em>Team</em>
+      </h2>
+      <div class="divider center"></div>
+      <p class="section-subtitle" style="margin:0 auto; text-align:center;">
+        Our kitchen and front-of-house team are the heart of everything we do.
+        Each one brings passion, skill and dedication to every single service.
+      </p>
+    </div>
+
+    <div class="team-grid-page stagger">
+
+      <div class="team-card-page">
+        <div class="team-card-img-wrap">
+          <img
+            class="team-card-page-img"
+            src="https://images.unsplash.com/photo-1583394293214-0d73bce3c2d9?w=450?w=500&q=80q=70"
+            alt="Chef Marco Ferrara"
+          />
+          <div class="team-social-overlay">
+            <a href="#" class="team-social-btn" aria-label="Instagram">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="team-card-info-page">
+          <h3>Marco Ferrara</h3>
+          <div class="role">Head Chef &amp; Co-Founder</div>
+          <p>With 20 years of culinary experience spanning Milan, Lisbon and Praia, Chef Marco's philosophy is simple: great food starts with great ingredients and a generous heart.</p>
+          <div class="speciality">&#11088; Speciality: Fresh pasta &amp; seafood</div>
+        </div>
+      </div>
+
+      <div class="team-card-page">
+        <div class="team-card-img-wrap">
+          <img
+            class="team-card-page-img"
+            src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=450?w=500&q=80q=70"
+            alt="Ana Silva"
+          />
+          <div class="team-social-overlay">
+            <a href="#" class="team-social-btn" aria-label="Instagram">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="team-card-info-page">
+          <h3>Ana Silva</h3>
+          <div class="role">Sous Chef</div>
+          <p>Cape Verde-born and classically trained in Lisbon, Ana brings a unique local perspective to our kitchen — elevating traditional recipes with a modern, precise touch.</p>
+          <div class="speciality">&#11088; Speciality: Grills &amp; seasonal menus</div>
+        </div>
+      </div>
+
+      <div class="team-card-page">
+        <div class="team-card-img-wrap">
+          <img
+            class="team-card-page-img"
+            src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=450?w=500&q=80q=70"
+            alt="Luca Rossi"
+          />
+          <div class="team-social-overlay">
+            <a href="#" class="team-social-btn" aria-label="Instagram">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="team-card-info-page">
+          <h3>Luca Rossi</h3>
+          <div class="role">Pastry Chef</div>
+          <p>Luca's desserts are nothing short of art. Trained at the finest patisserie in Florence, he brings an extraordinary level of precision and creativity to every dolce on our menu.</p>
+          <div class="speciality">&#11088; Speciality: Artisan desserts &amp; gelato</div>
+        </div>
+      </div>
+
+      <div class="team-card-page">
+        <div class="team-card-img-wrap">
+          <img
+            class="team-card-page-img"
+            src="https://images.unsplash.com/photo-1546961342-ea5f62d5a27b?w=450?w=500&q=80q=70"
+            alt="Carla Neves"
+          />
+          <div class="team-social-overlay">
+            <a href="#" class="team-social-btn" aria-label="Instagram">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="team-card-info-page">
+          <h3>Carla Neves</h3>
+          <div class="role">Restaurant Manager</div>
+          <p>Carla ensures every guest's experience is seamless, warm and memorable from the moment they walk in to the moment they leave. Her attention to detail is unmatched.</p>
+          <div class="speciality">&#11088; Speciality: Guest experience &amp; events</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== VALUES SECTION ========== -->
+  <section class="values-section-page">
+    <div style="text-align:center;">
+      <span class="section-tag" style="display:inline-flex; padding-left:2.5rem;">What Drives Us</span>
+      <h2 class="section-title reveal" style="text-align:center;">
+        Our Core <em>Values</em>
+      </h2>
+      <div class="divider center"></div>
+    </div>
+
+    <div class="values-grid-page stagger">
+
+      <div class="value-card-page">
+        <div class="value-icon-wrap">&#127807;</div>
+        <h3>Quality Above All</h3>
+        <p>We never compromise. Every ingredient is chosen for flavour, freshness and provenance. If it doesn't meet our standards, it doesn't reach your plate — simple as that.</p>
+      </div>
+
+      <div class="value-card-page">
+        <div class="value-icon-wrap">&#127981;</div>
+        <h3>Local Roots</h3>
+        <p>Cape Verde is our home and our inspiration. We partner with local fishermen, farmers and producers to celebrate the incredible ingredients this island nation has to offer.</p>
+      </div>
+
+      <div class="value-card-page">
+        <div class="value-icon-wrap">&#10084;</div>
+        <h3>Genuine Hospitality</h3>
+        <p>Every guest is treated like a cherished friend. We believe the warmth of our welcome and the care of our service are just as important as anything we serve at the table.</p>
+      </div>
+
+      <div class="value-card-page">
+        <div class="value-icon-wrap">&#127775;</div>
+        <h3>Creative Excellence</h3>
+        <p>We never stop learning, evolving and creating. Our menu is a living document — constantly refined through creativity, seasonality and an unending curiosity for great food.</p>
+      </div>
+
+      <div class="value-card-page">
+        <div class="value-icon-wrap">&#9752;</div>
+        <h3>Sustainability</h3>
+        <p>We take our responsibility to the environment seriously — minimising waste, choosing sustainable produce and supporting practices that protect Cape Verde's natural beauty.</p>
+      </div>
+
+      <div class="value-card-page">
+        <div class="value-icon-wrap">&#128106;</div>
+        <h3>Community First</h3>
+        <p>We are proud members of the Praia community. From employing locally to supporting neighbourhood events, we believe a great restaurant gives back to the world around it.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== AWARDS SECTION ========== -->
+  <section class="awards-section">
+    <span class="section-tag" style="display:inline-flex; padding-left:2.5rem;">Recognition</span>
+    <h2 class="section-title reveal" style="text-align:center;">
+      Proud to be <em>Recognised</em>
+    </h2>
+    <div class="divider center"></div>
+    <p class="section-subtitle" style="margin:0 auto; text-align:center;">
+      Awards mean nothing without happy guests — but we're grateful for the recognition all the same.
+    </p>
+
+    <div class="awards-grid stagger">
+      <div class="award-item">
+        <span class="award-icon">&#127942;</span>
+        <h4>Best Restaurant</h4>
+        <p>Cape Verde 2023</p>
+      </div>
+      <div class="award-item">
+        <span class="award-icon">&#11088;</span>
+        <h4>Top Fine Dining</h4>
+        <p>TripAdvisor 2022–24</p>
+      </div>
+      <div class="award-item">
+        <span class="award-icon">&#127869;</span>
+        <h4>Chef of the Year</h4>
+        <p>Praia Culinary Awards 2021</p>
+      </div>
+      <div class="award-item">
+        <span class="award-icon">&#127775;</span>
+        <h4>5 Star Service</h4>
+        <p>Google Reviews 2024</p>
+      </div>
+      <div class="award-item">
+        <span class="award-icon">&#127807;</span>
+        <h4>Sustainable Kitchen</h4>
+        <p>Cape Verde Green Award 2023</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== OUR PROMISE ========== -->
+  <section class="promise-section">
+    <div class="reveal-left">
+      <img
+        class="promise-img"
+        src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=700?w=900&q=80q=75"
+        alt="Osteria N.3 kitchen team"
+      />
+    </div>
+    <div class="reveal-right">
+      <span class="section-tag">Our Guarantee</span>
+      <h2 class="section-title">
+        Our Promise <em>to You</em>
+      </h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">
+        Every time you dine with us, you can count on these things — no exceptions, no excuses.
+      </p>
+      <div class="promise-list">
+        <div class="promise-list-item">
+          <div class="check">&#10003;</div>
+          <div class="text">
+            <h4>Fresh, Never Frozen</h4>
+            <p>Every ingredient is sourced fresh daily. We don't cut corners and we never compromise on what reaches your plate.</p>
+          </div>
+        </div>
+        <div class="promise-list-item">
+          <div class="check">&#10003;</div>
+          <div class="text">
+            <h4>Cooked to Order</h4>
+            <p>Everything on our menu is prepared fresh when you order it. No pre-made dishes, no shortcuts — just real cooking.</p>
+          </div>
+        </div>
+        <div class="promise-list-item">
+          <div class="check">&#10003;</div>
+          <div class="text">
+            <h4>Attentive, Genuine Service</h4>
+            <p>Our team knows every dish, every allergen and every detail. They're here to make your evening perfect, not just adequate.</p>
+          </div>
+        </div>
+        <div class="promise-list-item">
+          <div class="check">&#10003;</div>
+          <div class="text">
+            <h4>We Make it Right</h4>
+            <p>Not satisfied? We want to know. We will always do whatever it takes to make your experience one worth remembering.</p>
+          </div>
+        </div>
+      </div>
+      <a href="reservation.html" class="btn-primary" style="margin-top:2.5rem;">
+        &#128197;&nbsp; Book Your Experience
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="cta-banner">
+    <div class="cta-banner-content reveal">
+      <h2>Come and Experience It for Yourself</h2>
+      <p>Stories are good, but the real Osteria N.3 experience is on the plate and in the room. We'd love to welcome you.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;">
+        <a href="reservation.html" class="btn-primary" style="background:var(--white); color:var(--orange); border-color:var(--white);">
+          &#128197;&nbsp; Reserve a Table
+        </a>
+        <a href="contact.html" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-main">OSTERIA N.3</span>
+        <span class="logo-sub">Praia · Cape Verde</span>
+        <p>A celebration of authentic cuisine, warm hospitality and unforgettable moments in the heart of Praia.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="WhatsApp">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Our Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="reservation.html">Reservations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <ul>
+          <li><a style="color:var(--text-light);">Monday — Friday</a></li>
+          <li><a style="color:var(--text-muted); font-size:0.8rem;">12:00–15:00 &amp; 19:00–23:00</a></li>
+          <li style="margin-top:0.8rem;"><a style="color:var(--text-light);">Saturday</a></li>
+          <li><a style="color:var(--text-muted); font-size:0.8rem;">12:00 – 23:00</a></li>
+          <li style="margin-top:0.8rem;"><a style="color:var(--text-light);">Sunday</a></li>
+          <li><a style="color:var(--orange); font-size:0.8rem;">Closed</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <span class="icon">&#128205;</span>
+          <span>Praia, Cape Verde</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">&#128222;</span>
+          <span><a href="tel:+238918610" style="color:var(--text-muted);" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--text-muted)'">+238 918 610</a></span>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="reservation.html" class="btn-primary" style="font-size:0.72rem; padding:0.7rem 1.5rem;">Book a Table</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span>Osteria N.3</span> &nbsp;&middot;&nbsp; Praia, Cape Verde &nbsp;&middot;&nbsp; All Rights Reserved.</p>
+      <p>Crafted with <span>&#9829;</span> for exceptional dining</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
