@@ -775,3 +775,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log('%c🍽️ Osteria N.3 — Website Loaded', 'color:#e85d04; font-size:14px; font-weight:bold;');
 });
+// RESERVATION CONFIRMATION MESSAGE (No page reload)
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    if (!form) return;
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn?.textContent;
+        if (submitBtn) {
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+        }
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            const toast = document.createElement('div');
+            toast.textContent = response.ok
+                ? '✅ Reservation request sent! We will confirm within 24 hours.'
+                : '❌ Something went wrong. Please try again or call us.';
+            toast.style.cssText = 'position:fixed;bottom:20px;right:20px;background:' + (response.ok ? '#28a745' : '#dc3545') + ';color:#fff;padding:12px 24px;border-radius:40px;z-index:10000;font-family:inherit;font-weight:500;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.3s ease;';
+            document.body.appendChild(toast);
+
+            if (response.ok) form.reset();
+            setTimeout(() => toast.remove(), 4000);
+
+        } catch (error) {
+            alert('Network error. Please check your connection and try again.');
+        } finally {
+            if (submitBtn) {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+    });
+});
