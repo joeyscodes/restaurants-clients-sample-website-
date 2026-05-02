@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monsoon - An elevated Asian dining experience in the heart of Manama, Bahrain. Discover bold flavors, refined ambiance, and impeccable service.">
+    <title>Monsoon | Asian Restaurant & Bar — Manama, Bahrain</title>
+
+    <!-- Fonts: Playfair Display + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOADER (Index only) -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <p class="loader-text">Monsoon</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Monsoon</a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="reservation.html">Reservation</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200&q=80');"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-subtitle">Manama, Bahrain</p>
+                <h1 class="hero-title">Monsoon</h1>
+                <p class="hero-tagline">Where the soul of Asia meets the spice of the Gulf.</p>
+                <div class="hero-buttons">
+                    <a href="reservation.html" class="btn btn-primary">Reserve a Table</a>
+                    <a href="menu.html" class="btn btn-outline">Explore Menu</a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- About Teaser -->
+        <section class="about-teaser section-padding reveal">
+            <div class="container">
+                <div class="about-teaser-grid">
+                    <div class="about-teaser-image">
+                        <img src="https://images.unsplash.com/photo-1540648639573-8c848de23f0a?w=800&q=80" alt="Monsoon interior ambiance with warm lantern light">
+                    </div>
+                    <div class="about-teaser-text">
+                        <p class="section-label">Our Story</p>
+                        <h2 class="section-title">Rooted in Tradition,<br>Reimagined for the Senses</h2>
+                        <p>At Monsoon, we don’t just serve dishes — we curate journeys across Asia’s most vibrant kitchens. From the fiery streets of Bangkok to the delicate tea houses of Kyoto, every plate tells a story of heritage, precision, and passion. Our Bahrain home is a sanctuary of candlelight, dark wood, and the gentle hum of conversation — a place where time slows down and flavor takes center stage.</p>
+                        <a href="about.html" class="btn btn-text">Discover More <span>&rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Menu / Gallery -->
+        <section class="featured-menu section-padding reveal">
+            <div class="container">
+                <p class="section-label">Signature Selections</p>
+                <h2 class="section-title">A Taste of the Monsoon</h2>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" alt="Steamed dim sum with soy drizzle">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3>Crystal Prawn Dumplings</h3>
+                            <p>Hand-folded, translucent skins filled with wild-caught prawn and a whisper of ginger.</p>
+                            <span class="price">BHD 9.500</span>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80" alt="Thai green curry in a bowl">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3>Green Monsoon Curry</h3>
+                            <p>Fragrant Thai basil, coconut cream, and tender chicken simmered in aromatic green curry.</p>
+                            <span class="price">BHD 12.800</span>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <div class="menu-card-image">
+                            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80" alt="Wagyu beef tataki with ponzu">
+                        </div>
+                        <div class="menu-card-content">
+                            <h3>Wagyu Tataki</h3>
+                            <p>Seared premium wagyu, thinly sliced, finished with ponzu and truffle oil.</p>
+                            <span class="price">BHD 18.200</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-btn">
+                    <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials section-padding reveal">
+            <div class="container">
+                <p class="section-label">What Guests Say</p>
+                <h2 class="section-title">The Monsoon Experience</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Monsoon is a revelation. The flavors are bold yet balanced — easily the finest Asian dining in Bahrain. The Peking duck was perfection."</p>
+                        <span class="testimonial-author">— Layla Al Khalifa</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"From the moment we stepped in, the ambiance embraced us. The dim sum, the cocktails, the service — everything whispered luxury. A true gem in Manama."</p>
+                        <span class="testimonial-author">— Omar Hassan</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"I’ve traveled Asia extensively, but Monsoon’s green curry transported me straight to Chiang Mai. Unforgettable evening."</p>
+                        <span class="testimonial-author">— Sarah Mitchell</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation CTA -->
+        <section class="reservation-cta section-padding reveal">
+            <div class="container">
+                <div class="cta-card">
+                    <p class="section-label">Join Us</p>
+                    <h2 class="section-title">Reserve Your Evening</h2>
+                    <p>Let us prepare something extraordinary for you. Book a table and allow the Monsoon to carry you away on a tide of unforgettable flavors.</p>
+                    <a href="reservation.html" class="btn btn-primary">Make a Reservation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">Monsoon</a>
+                <p>An elevated Asian dining experience in the heart of Manama.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="reservation.html">Reservation</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>6H7M+QWV, Rd No 3816<br>Manama, Bahrain</p>
+                <p><a href="tel:+97317749222">+973 1774 9222</a></p>
+                <p><a href="mailto:info@monsoonbahrain.com">info@monsoonbahrain.com</a></p>
+            </div>
+            <div class="footer-hours">
+                <h4>Hours</h4>
+                <p>Mon – Thu: 6 PM – 11 PM<br>Fri – Sat: 1 PM – 12 AM<br>Sun: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Monsoon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
