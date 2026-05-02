@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="Reserve your table at Monsoon, Manama – Asian dining experience."><title>Reservations | Monsoon</title><link rel="stylesheet" href="style.css"></head><body>
+<nav class="navbar"><a href="index.html" class="logo">MONSOON</a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="menu.html">Menu</a></li><li><a href="about.html">About</a></li><li><a href="reservation.html" class="active">Reservations</a></li><li><a href="contact.html">Contact</a></li><li><a href="reservation.html" class="nav-cta">Book a Table</a></li></ul><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></nav>
+<section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1600&q=80');"><div class="page-hero-content reveal"><h1>Reserve Your Experience</h1><p class="breadcrumb"><a href="index.html">Home</a> &gt; <span>Reservations</span></p></div></section>
+<section class="section"><div class="container"><div class="reservation-layout reveal">
+  <div>
+    <div id="reservationFormContainer">
+      <form id="reservationForm" class="reservation-form" action="https://formspree.io/f/FORM_ID" method="POST">
+        <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required></div>
+        <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required></div>
+        <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" required></div>
+        <div class="form-group"><label for="date">Date *</label><input type="date" id="date" name="date" required></div>
+        <div class="form-group"><label for="time">Time *</label><input type="time" id="time" name="time" required></div>
+        <div class="form-group"><label for="guests">Guests *</label><select id="guests" name="guests" required><option value="" disabled selected>Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8+</option></select></div>
+        <div class="form-group"><label for="special">Special Requests</label><textarea id="special" name="special-requests" placeholder="Allergies, celebrations..."></textarea></div>
+        <button type="submit" class="btn btn-primary">Confirm Reservation</button>
+      </form>
+    </div>
+    <div id="confirmationMsg" class="confirmation-msg"><div class="check-icon">&#10003;</div><h3>Reservation Received!</h3><p>We've received your booking request. A confirmation will be sent shortly.</p></div>
+  </div>
+  <div class="reservation-info"><h3>Before the Storm</h3><p><span class="icon">&#128339;</span> <strong>Hours</strong><br>Daily: 12:00–15:00 & 19:00–00:00</p><p><span class="icon">&#128205;</span> <strong>Location</strong><br>6H7M+QWV, Rd 3816, Manama</p><p><span class="icon">&#128222;</span> <strong>Phone</strong><br>+973 1774 9222</p></div>
+</div></div></section>
+<footer class="footer"><div class="footer-grid"><div class="footer-col"><h4>Monsoon</h4><p>Manama, Bahrain</p></div><div class="footer-col"><h4>Hours</h4><p>Daily: 12:00–15:00 & 19:00–00:00</p></div><div class="footer-col"><h4>Contact</h4><p>+973 1774 9222</p></div><div class="footer-col"><h4>Follow</h4><div class="social-links"><a href="#">📷</a><a href="#">📘</a><a href="#">⭐</a></div></div></div><div class="footer-bottom"><p>&copy; 2025 <span class="accent">Monsoon</span>.</p></div></footer>
+<a href="https://wa.me/97317749222?text=Hello%20Monsoon" class="whatsapp-float" target="_blank" rel="noopener">💬</a>
+<script src="script.js" defer></script>
+</body></html>
