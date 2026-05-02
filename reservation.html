@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reserve your table at Monsoon, Manama's premier Asian dining destination. Book online for an unforgettable evening.">
+    <title>Reservation | Monsoon — Manama, Bahrain</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Monsoon</a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="reservation.html" class="active">Reservation</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=80');"></div>
+            <div class="page-header-overlay"></div>
+            <div class="page-header-content">
+                <h1>Reservations</h1>
+                <p>Your table awaits. Secure it now.</p>
+            </div>
+        </section>
+
+        <!-- Reservation Form -->
+        <section class="reservation-section section-padding reveal">
+            <div class="container">
+                <div class="reservation-wrapper">
+                    <div class="reservation-info">
+                        <h2 class="section-title">Book Your Table</h2>
+                        <p>For parties larger than 8, please call us directly at <a href="tel:+97317749222">+973 1774 9222</a> and we'll craft a bespoke experience.</p>
+                        <div class="reservation-details">
+                            <div class="res-info-item">
+                                <h4>Hours</h4>
+                                <p>Mon – Thu: 6 PM – 11 PM<br>Fri – Sat: 1 PM – 12 AM<br>Sun: Closed</p>
+                            </div>
+                            <div class="res-info-item">
+                                <h4>Location</h4>
+                                <p>6H7M+QWV, Rd No 3816<br>Manama, Bahrain</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reservation-form-wrapper">
+                        <form id="reservationForm" action="https://formspree.io/f/FORM_ID" method="POST">
+                            <div class="form-group">
+                                <label for="fullName">Full Name <span>*</span></label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email <span>*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="you@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone <span>*</span></label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+973 3XXX XXXX">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="date">Date <span>*</span></label>
+                                    <input type="date" id="date" name="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time">Time <span>*</span></label>
+                                    <input type="time" id="time" name="time" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Number of Guests <span>*</span></label>
+                                <select id="guests" name="guests" required>
+                                    <option value="" disabled selected>Select number</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7">7 Guests</option>
+                                    <option value="8">8 Guests</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="requests">Special Requests</label>
+                                <textarea id="requests" name="requests" rows="4" placeholder="Allergies, celebrations, seating preferences..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Confirm Reservation</button>
+                        </form>
+                        <!-- Confirmation Message (Hidden by default) -->
+                        <div id="confirmationMessage" class="confirmation-message" style="display: none;">
+                            <div class="confirmation-icon">&#10003;</div>
+                            <h3>Reservation Confirmed</h3>
+                            <p>Thank you for choosing Monsoon. A confirmation has been sent to your email. We look forward to welcoming you for an extraordinary evening.</p>
+                            <p class="confirmation-note">If you don't see the email, please check your spam folder or call us at +973 1774 9222.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">Monsoon</a>
+                <p>An elevated Asian dining experience in the heart of Manama.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="reservation.html">Reservation</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>6H7M+QWV, Rd No 3816<br>Manama, Bahrain</p>
+                <p><a href="tel:+97317749222">+973 1774 9222</a></p>
+                <p><a href="mailto:info@monsoonbahrain.com">info@monsoonbahrain.com</a></p>
+            </div>
+            <div class="footer-hours">
+                <h4>Hours</h4>
+                <p>Mon – Thu: 6 PM – 11 PM<br>Fri – Sat: 1 PM – 12 AM<br>Sun: Closed</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Monsoon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
