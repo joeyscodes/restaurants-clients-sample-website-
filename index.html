@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Monsoon – an immersive Asian dining experience in Manama, Bahrain. Reserve your table for a cinematic culinary journey.">
+  <title>Monsoon | Asian Restaurant in Manama, Bahrain</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- LOADER -->
+  <div id="loader"><div class="spinner"></div></div>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">MONSOON</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="reservation.html">Reservations</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservation.html" class="nav-cta">Book a Table</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- HERO WITH 3D CANVAS -->
+  <section class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-label">Manama, Bahrain</p>
+      <h1 class="hero-title">Where the Monsoon<br>Awakens Flavour</h1>
+      <p class="hero-subtitle">A contemporary Asian kitchen inspired by the rhythm of the rain — bold, delicate, and unforgettable.</p>
+      <div class="hero-buttons">
+        <a href="reservation.html" class="btn btn-primary">Reserve Your Table</a>
+        <a href="menu.html" class="btn btn-outline">Explore the Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about-teaser">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <span class="section-label">Our Essence</span>
+          <h2>The Spirit of the Rain</h2>
+          <p>Monsoon celebrates the dramatic beauty of Asia’s rainy season — a time of renewal and deep, layered flavour. Our chefs weave traditional techniques with modern flair, using spices that rumble like thunder and herbs that refresh like the first drizzle.</p>
+          <p>Nestled in the heart of Manama, our space mirrors this duality: intimate yet vibrant, with dark timber, brushed gold, and soft lantern light.</p>
+          <a href="about.html" class="btn btn-outline">Discover More</a>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Monsoon interior">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED MENU -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Signature Selections</span>
+        <h2>Chef's Rainy Season Picks</h2>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-card reveal">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Monsoon Seabass">
+          <div class="menu-card-content">
+            <h4>Steamed Monsoon Seabass</h4>
+            <p>Chilean seabass with lemongrass, ginger, and a cloud of soy‑sake broth.</p>
+            <span class="price">BD 14</span>
+          </div>
+        </div>
+        <div class="menu-card reveal">
+          <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" alt="Wagyu Rendang">
+          <div class="menu-card-content">
+            <h4>Wagyu Rendang</h4>
+            <p>Slow‑braised wagyu cheek in aromatic coconut spice, with turmeric rice.</p>
+            <span class="price">BD 19</span>
+          </div>
+        </div>
+        <div class="menu-card reveal">
+          <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80" alt="Monsoon Elixir">
+          <div class="menu-card-content">
+            <h4>Monsoon Elixir</h4>
+            <p>Lychee, jasmine tea, and a splash of coconut rum — our signature cocktail.</p>
+            <span class="price">BD 7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Ambiance</span>
+        <h2>Inside the Storm</h2>
+      </div>
+      <div class="gallery-grid">
+        <img class="reveal" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Private dining">
+        <img class="reveal" src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&q=80" alt="Bar area">
+        <img class="reveal" src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&q=80" alt="Chef plating">
+        <img class="reveal" src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80" alt="Evening glow">
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Guest Stories</span>
+        <h2>After the Rain</h2>
+      </div>
+      <div class="testimonial-cards">
+        <div class="testimonial-card reveal">
+          <p class="quote">"Monsoon is a sensory journey. The seabass was ethereal, and the cocktail menu is unlike anything in Bahrain. Already planning our next visit."</p>
+          <p class="author">— Fatima A., Manama</p>
+        </div>
+        <div class="testimonial-card reveal">
+          <p class="quote">"The atmosphere is pure cinema. Dark, moody, with that incredible 3D artwork that moves as you walk in. Food is equally theatrical."</p>
+          <p class="author">— Oliver & James, Dubai</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATION CTA -->
+  <section class="section reservation-cta">
+    <div class="container reveal">
+      <span class="section-label">Join Us</span>
+      <h2>Let the Monsoon Guide You</h2>
+      <p>Book your table and experience the storm of flavours that awaits.</p>
+      <a href="reservation.html" class="btn btn-primary">Make a Reservation</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Monsoon</h4><p>Asian restaurant & bar<br>Manama, Bahrain</p></div>
+      <div class="footer-col"><h4>Hours</h4><p>Daily: 12:00–15:00 & 19:00–00:00</p><p>Friday Brunch: 12:00–16:00</p></div>
+      <div class="footer-col"><h4>Contact</h4><p>6H7M+QWV, Rd 3816, Manama</p><p>+973 1774 9222</p><p>info@monsoonbahrain.com</p></div>
+      <div class="footer-col"><h4>Follow</h4><div class="social-links"><a href="#">📷</a><a href="#">📘</a><a href="#">⭐</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 <span class="accent">Monsoon</span>. Crafted with passion.</p></div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/97317749222?text=Hello%20Monsoon%2C%20I'd%20like%20to%20book%20a%20table" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+</body>
+                                                                                                                                                                            </html>
